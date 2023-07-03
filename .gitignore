@@ -11,6 +11,8 @@
 # production
 /build
 
+Comming Soon
+
 # misc
 .DS_Store
 .env.local
