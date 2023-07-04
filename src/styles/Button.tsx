@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 
 const Button = styled.div`
-    color: #000000;
-    background-color: #646464;
-    border: 3px solid #000000;
+    color: #010202;
+    background-color: #e4e2e2;
+    border: 3px solid #010202;
     border: 3px solid transparent;
     padding: 16px 32px;
     text-align: center;
@@ -16,9 +16,9 @@ const Button = styled.div`
     font-weight: 700;
 
     &:hover {
-        border: 3px solid #646464;
+        border: 3px solid #e4e2e2;
         background-color: transparent;
-        color: #646464;
+        color: #e4e2e2;
         transform: scale(1.1);
     }
 `;
