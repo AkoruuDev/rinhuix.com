@@ -7,10 +7,19 @@ const Container = styled.div`
     color: #e4e2e2;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     position: absolute;
+
+    h1 {
+        font-family: 'Bruno Ace SC', cursive;
+    }
+
+    p {
+        font-family: 'Julius Sans One', sans-serif;
+    }
 `;
 
 export {

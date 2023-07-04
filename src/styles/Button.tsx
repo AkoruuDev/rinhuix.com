@@ -14,6 +14,7 @@ const Button = styled.div`
     transition:.3s ease all;
     cursor: pointer;
     font-weight: 700;
+    font-family: 'Julius Sans One', sans-serif;
 
     &:hover {
         border: 3px solid #e4e2e2;
