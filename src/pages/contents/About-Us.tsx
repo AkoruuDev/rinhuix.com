@@ -1,4 +1,4 @@
-import { CommingSoon } from "../../services/commingSoon/CommingSoon";
+import { CommingSoon } from "../../services/CommingSoon";
 
 function AboutUs() {
     const wait = true;
