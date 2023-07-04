@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { CommingSoon } from "../services/commingSoon/CommingSoon";
+import { CommingSoon } from "../services/CommingSoon";
 import { keyframes, styled } from "styled-components";
 
 function PageNotFound() {
