@@ -41,18 +41,18 @@ function Home() {
                     </SecOne>
                     <SecTwo>
                         <div>
-                            <h1>Hear your called</h1>
-                            <Space />
+                            <h1>Listen to your calling</h1>
+                            <Wid><Space /></Wid>
                             <p>
-                                Imagine that all your life was only a dream and NOW you waked up
+                                What if all your life was just a dream and now you woke up
                             </p>
-                            <p>
-                                All your turn is new and fantastic with dragons and magic and you are one their
+                            <p>  
+                                verything around you is new and wondrous, with dragons and magic, and you were a part of that everything?
                             </p>
-                            <Space />
-                            <p>Explore a new world and meet new people</p>
-                            <p>Explore dungeons and recive items</p>
-                            <p>Make a perfect world to you</p>
+                            <Wid><Space /></Wid>
+                            <p>Live in a new world and meet new people</p>
+                            <p>Explore dungeons and receive amazing items</p>
+                            <p>Craft your own perfect world</p>
                         </div>
                     </SecTwo>
                     <Footer />
@@ -121,6 +121,7 @@ const SecOne = styled(Section)`
 `
 
 const SecTwo = styled(Section)`
+    text-align: center;
     background-color: #303030;
     border-radius: 50px 50px 0 0;
     padding: 40px 0;
@@ -130,6 +131,10 @@ const Title = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+`
+
+const Wid = styled.span`
+    width: 10%;
 `
 
 export {
