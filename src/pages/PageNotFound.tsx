@@ -28,7 +28,7 @@ function PageNotFound() {
     )
 }
 
-document.addEventListener("DOMContentLoaded",function(){
+/* document.addEventListener("DOMContentLoaded",function(){
 
     var body=document.body;
     setInterval(createStar,100);
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded",function(){
             star.style.right=right+"px";
         }
     } 
-})
+}) */
 
 const astronautFly = keyframes`
     0%{
