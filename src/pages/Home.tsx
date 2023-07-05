@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { CommingSoon } from "../services/CommingSoon";
-import { Button, Container, Space } from "../styles";
+import { Button, Container, LogoBlack, Space } from "../styles";
 import { AiOutlineMenu } from 'react-icons/ai';
-import logo from '../assets/new-logo.png';
 import { styled } from "styled-components";
 import { IconContext } from "react-icons";
 import { Footer } from "./Footer";
@@ -30,7 +29,7 @@ function Home() {
                     </Nav>
                     <SecOne>
                         <div>
-                            <img src={logo} alt="rinhuix logo" />
+                            <LogoBlack />
                             <Title>
                                 <h1>RINHUIX</h1>
                                 <p>
