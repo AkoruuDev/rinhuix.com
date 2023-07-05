@@ -13,7 +13,7 @@ function Space() {
 };
 
 const Container = styled.span`
-    width: 10%;
+    width: 100%;
     height: 0;
     margin: 20px 0;
     border: 1px solid #ffbb00;
