@@ -36,7 +36,7 @@ function Footer() {
                     </div>
                 </Infos>
             
-                <Space />
+                <Wid><Space /></Wid>
 
                 <Tm>
                     <span>Rinhuix &copy; 2021 - All rights reserved</span>
@@ -80,6 +80,10 @@ const Infos = styled.div`
         margin-bottom: 18px;
         cursor: pointer;
     }
+`
+
+const Wid = styled.span`
+    width: 10%;
 `
 
 const Tm = styled.div`
