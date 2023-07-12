@@ -15,6 +15,23 @@ function Roll() {
     const [diceRoll, setDiceRoll] = useState(false)
     const [diceResult, setDiceResult] = useState()
 
+    function ramdomThis(d) {
+        const array = [];
+        for (let i = 1; i <= d; i++) {
+            array.push(i);
+        }
+
+        const interval = setInterval(() => {
+            const res = array[Math.floor(Math.random() * array.length)]
+            setDiceResult(res)
+        }, 50)
+        
+        setTimeout(() => {
+            setDiceRoll(false)
+            clearInterval(interval)
+        }, 1000)
+    }
+
     return (
         <>
             {
