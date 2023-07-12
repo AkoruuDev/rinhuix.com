@@ -122,6 +122,92 @@ function Roll() {
                             </More>
                         </Dices>
                     </DiceBox>
+                    <Result>
+                        {!result ?
+                            <h2>Select a dice</h2> :
+                            <>
+                                {
+                                    dice === 'd4' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsFillTriangleFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }
+                                {
+                                    dice === 'd6' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsFillSquareFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }
+                                {
+                                    dice === 'd8' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsDiamondFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }
+                                {
+                                    dice === 'd10' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsFillPentagonFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }{
+                                    dice === 'd12' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsFillOctagonFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }
+                                {
+                                    dice === 'd20' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsFillHexagonFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }{
+                                    dice === 'd100' ?
+                                    <Rolling>
+                                        <div><h6>{diceResult}</h6></div>
+                                        <RollAn rollThat={diceRoll}>
+                                            <IconContext.Provider value={{ size: "90%", style: { cursor: "pointer" } }}>
+                                                <BsFillCircleFill />
+                                            </IconContext.Provider>
+                                        </RollAn>
+                                    </Rolling> : undefined
+                                }
+                                {
+                                    dice === 'more' ?
+                                    <></> : undefined
+                                }
+                            </>
+                        }
+                    </Result>
                 </Container>
             }
         </>
