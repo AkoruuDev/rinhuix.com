@@ -13,11 +13,11 @@ const Container = styled.div`
 
     position: absolute;
 
-    h1 {
+    h1, h2, h3, h4, h5, h6 {
         font-family: 'Bruno Ace SC', cursive;
     }
 
-    p {
+    p, span {
         font-family: 'Julius Sans One', sans-serif;
     }
 `;
