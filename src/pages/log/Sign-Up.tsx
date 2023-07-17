@@ -79,7 +79,9 @@ function SignUp() {
                 <CommingSoon /> :
                 <Container>
                     <Logo onClick={() => navigate('/')}>
-                        <LogoWhite />
+                        <Size>
+                            <LogoWhite />
+                        </Size>
                         <h1>RINHUIX</h1>
                     </Logo>
                     <Login>
@@ -159,6 +161,10 @@ const Logo = styled.div`
     h1 {
         margin-left: 14px;
     }
+`
+
+const Size = styled.div`
+    width: 100px;
 `
 
 const Login = styled.section`
