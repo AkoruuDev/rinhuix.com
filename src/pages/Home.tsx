@@ -29,7 +29,9 @@ function Home() {
                     </Nav>
                     <SecOne>
                         <div>
-                            <LogoBlack />
+                            <Size>
+                                <LogoBlack />
+                            </Size>
                             <Title>
                                 <h1>RINHUIX</h1>
                                 <p>
@@ -63,7 +65,12 @@ function Home() {
 
 const ContainerHome = styled(Container)`
     justify-content: flex-start;
-    padding-top: 18vh;
+    padding-top: 15vh;
+    overflow-x: hidden;
+
+    @media(min-width: 650px) {
+        padding-top: 10vh;
+    }
 `
 
 const Nav = styled.nav`
@@ -83,6 +90,11 @@ const Nav = styled.nav`
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: all 0.5s ease;
+
+        @media(max-width: 420px) {
+            width: 20%;
+        }
     }
 `;
 
@@ -92,6 +104,11 @@ const Login = styled.div`
     gap:.8em;
     cursor: pointer;
     user-select: none;
+    transition: all 0.5s ease;
+
+    @media (max-width: 420px) {
+        display: none;
+    }
 `;
 
 const Section = styled.section`
@@ -104,6 +121,7 @@ const Section = styled.section`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transition: all 0.5s ease;
     }
 
     h1 {
@@ -116,7 +134,11 @@ const Section = styled.section`
 `
 
 const SecOne = styled(Section)`
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+`
+
+const Size = styled.div`
+    width: 100vw;
 `
 
 const SecTwo = styled(Section)`
@@ -124,16 +146,61 @@ const SecTwo = styled(Section)`
     background-color: #303030;
     border-radius: 50px 50px 0 0;
     padding: 40px 0;
+
+    & h1 {
+        font-size: 26px;
+        transition: all 0.5s ease;
+    }
+
+    & p {
+        font-size: 15px;
+        transition: all 0.5s ease;
+    }
+
+    @media(max-width: 500px) {
+        & h1 {
+            font-size: 18px;
+        }
+
+        & p {
+            font-size: 10px;
+        }
+    }
 `
 
 const Title = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+
+    & h1 {
+        font-size: 36px;
+        transition: all 0.5s ease;
+    }
+
+    & p {
+        font-size: 15px;
+        transition: all 0.5s ease;
+    }
+
+    @media(max-width: 420px) {
+        & h1 {
+            font-size: 26px;
+        }
+
+        & p {
+            font-size: 10px;
+        }
+    }
 `
 
 const Wid = styled.span`
-    width: 10%;
+    width: 30%;
+    transition: all 0.5s ease;
+
+    @media(max-width: 500px) {
+        width: 50%;
+    }
 `
 
 export {
