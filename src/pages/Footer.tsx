@@ -80,16 +80,34 @@ const Infos = styled.div`
         margin-bottom: 18px;
         cursor: pointer;
     }
+
+    @media(max-width: 430px) {
+        flex-direction: column;
+        align-items: center;
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 `
 
 const Wid = styled.span`
-    width: 10%;
+    width: 30%;
+    transition: all 0.5s ease;
+
+    @media(max-width: 500px) {
+        width: 50%;
+    }
 `
 
 const Tm = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 `
 
 export {
