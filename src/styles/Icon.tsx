@@ -13,11 +13,16 @@ function LogoBlack() {
 }
 
 const ImageW = styled.img`
-    width: 100px;
+    width: 100%;
 `;
 
 const ImageB = styled.img`
-    width: 600px;
+    width: 120%;
+
+    @media(min-width: 650px) {
+        height: 80%;
+        width: auto;
+    }
 `;
 
 export {
