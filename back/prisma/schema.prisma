@@ -6,3 +6,185 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model breed_types {
+  id          Int          @id(map: "breed_types_pk") @default(autoincrement())
+  type        String       @unique
+  description String
+  characters  characters[]
+}
+
+model breeds {
+  id          Int          @id(map: "breeds_pk") @default(autoincrement())
+  breed       String       @unique
+  section     String
+  description Int
+  char_breed  char_breed[]
+}
+
+model char_breed {
+  id         Int        @id(map: "char_breed_pk") @default(autoincrement())
+  char_id    Int
+  breed_id   Int
+  characters characters @relation(fields: [char_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_breed_fk0")
+  breeds     breeds     @relation(fields: [breed_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_breed_fk1")
+}
+
+model char_element {
+  id         Int        @id(map: "char_element_pk") @default(autoincrement())
+  char_id    Int
+  element_id Int
+  characters characters @relation(fields: [char_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_element_fk0")
+  elements   elements   @relation(fields: [element_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_element_fk1")
+}
+
+model char_magic {
+  id            Int         @id(map: "char_magic_pk") @default(autoincrement())
+  char_id       Int
+  magic_type_id Int
+  characters    characters  @relation(fields: [char_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_magic_fk0")
+  magic_types   magic_types @relation(fields: [magic_type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_magic_fk1")
+}
+
+model char_personality {
+  id          Int        @id(map: "char_personality_pk") @default(autoincrement())
+  char_id     Int
+  personality String
+  history     String
+  motivations String
+  characters  characters @relation(fields: [char_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_personality_fk0")
+}
+
+model char_powers {
+  id           Int        @id(map: "char_powers_pk") @default(autoincrement())
+  char_id      Int
+  breed        Boolean    @default(true)
+  unique_power Boolean    @default(true)
+  magic        Boolean    @default(true)
+  element      Boolean    @default(true)
+  characters   characters @relation(fields: [char_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "char_powers_fk0")
+}
+
+model characters {
+  id                                 Int                @id(map: "characters_pk") @default(autoincrement())
+  user_id                            Int
+  created_at                         Int
+  name                               String
+  birthday                           Int
+  appearance                         String             @default("https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg")
+  breed_type                         Int
+  char_breed                         char_breed[]
+  char_element                       char_element[]
+  char_magic                         char_magic[]
+  char_personality                   char_personality[]
+  char_powers                        char_powers[]
+  users                              users              @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "characters_fk0")
+  dates_characters_created_atTodates dates              @relation("characters_created_atTodates", fields: [created_at], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "characters_fk1")
+  dates_characters_birthdayTodates   dates              @relation("characters_birthdayTodates", fields: [birthday], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "characters_fk2")
+  breed_types                        breed_types        @relation(fields: [breed_type], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "characters_fk3")
+}
+
+model dates {
+  id                                      Int          @id(map: "dates_pk") @default(autoincrement())
+  day                                     String
+  month                                   String
+  year                                    String
+  weekday                                 String
+  hour                                    String
+  minute                                  String
+  characters_characters_created_atTodates characters[] @relation("characters_created_atTodates")
+  characters_characters_birthdayTodates   characters[] @relation("characters_birthdayTodates")
+  profiles_profiles_created_atTodates     profiles[]   @relation("profiles_created_atTodates")
+  profiles_profiles_birthdayTodates       profiles[]   @relation("profiles_birthdayTodates")
+}
+
+model elements {
+  id           Int            @id(map: "elements_pk") @default(autoincrement())
+  element      String         @unique
+  class        String
+  rarity       Int
+  description  String
+  char_element char_element[]
+}
+
+model magic_types {
+  id          Int          @id(map: "magic_types_pk") @default(autoincrement())
+  type        String       @unique
+  description String
+  char_magic  char_magic[]
+  magics      magics[]
+}
+
+model magic_use_types {
+  id          Int      @id(map: "magic_use_types_pk") @default(autoincrement())
+  name        String   @unique
+  description String
+  magics      magics[]
+}
+
+model magics {
+  id              Int             @id(map: "magics_pk") @default(autoincrement())
+  name            String          @unique
+  rank            Int
+  type            Int
+  power           String
+  picture         String          @default("https://icon-library.com/images/image-gallery-icon/image-gallery-icon-14.jpg")
+  description     String
+  created_by      Int
+  use             Int
+  ranks           ranks           @relation(fields: [rank], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "magics_fk0")
+  magic_types     magic_types     @relation(fields: [type], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "magics_fk1")
+  magic_use_types magic_use_types @relation(fields: [use], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "magics_fk2")
+}
+
+model powers {
+  id          Int    @id(map: "powers_pk") @default(autoincrement())
+  power       String
+  description Int
+}
+
+model profiles {
+  id                               Int    @id(map: "profiles_pk") @default(autoincrement())
+  user_id                          Int
+  created_at                       Int
+  picture                          String @default("https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg")
+  birthday                         Int?
+  users                            users  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "profiles_fk0")
+  dates_profiles_created_atTodates dates  @relation("profiles_created_atTodates", fields: [created_at], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "profiles_fk1")
+  dates_profiles_birthdayTodates   dates? @relation("profiles_birthdayTodates", fields: [birthday], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "profiles_fk2")
+}
+
+model ranks {
+  id     Int      @id(map: "ranks_pk") @default(autoincrement())
+  rank   String   @unique
+  min_xp Int
+  xp_buy Int
+  magics magics[]
+}
+
+model sessions {
+  id      Int    @id(map: "sessions_pk") @default(autoincrement())
+  user_id Int    @unique
+  token   String @unique
+  users   users  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sessions_fk0")
+}
+
+model social {
+  id       Int     @id(map: "social_pk") @default(autoincrement())
+  user_id  Int
+  facebook String?
+  intagram String?
+  whatsapp String?
+  users    users   @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "social_fk0")
+}
+
+model users {
+  id         Int          @id(map: "users_pk") @default(autoincrement())
+  name       String
+  email      String       @unique
+  password   String
+  characters characters[]
+  profiles   profiles[]
+  sessions   sessions?
+  social     social[]
+}
