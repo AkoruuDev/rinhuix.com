@@ -244,6 +244,11 @@ const DiceBox = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease;
+
+    @media(max-height: 790px) {
+        margin-top:-10rem ;
+    }
 `
 
 const Dice = styled.div`
@@ -259,6 +264,10 @@ const Dice = styled.div`
     cursor: pointer;
 
     transform: ${props => props.selected ? 'rotateZ(180deg)' : 'rotareZ(0)'};
+
+    @media(max-height: 790px) {
+        scale: 0.8;
+    }
 `;
 
 const Circle = styled.div`
@@ -274,6 +283,11 @@ const Circle = styled.div`
     transition: all .8s ease;
 
     z-index: 1;
+
+    @media(max-height: 790px) {
+        width: ${props => props.selected ? '100px' : '50px'};
+        height: ${props => props.selected ? '100px' : '50px'};
+    }
 `;
 
 const Dices = styled.div`
@@ -297,6 +311,11 @@ const D4 = styled(Dice)`
     & p {
         top: 50px;
     }
+
+    @media(max-height: 790px) {
+        bottom: ${props => props.selected ? '75px' : '150px'};
+        right: ${props => props.selected ? '75px' : '150px'};
+    }
 `;
 
 const D6 = styled(Dice)`
@@ -307,6 +326,10 @@ const D6 = styled(Dice)`
     & * {
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s .1s ease;
+    }
+
+    @media(max-height: 790px) {
+        right: ${props => props.selected ? '25px' : '150px'};
     }
 `;
 
@@ -319,6 +342,11 @@ const D8 = styled(Dice)`
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s .2s ease;
     }
+
+    @media(max-height: 790px) {
+        top: ${props => props.selected ? '75px' : '150px'};
+        right: ${props => props.selected ? '75px' : '150px'};
+    }
 `;
 
 const D10 = styled(Dice)`
@@ -329,6 +357,11 @@ const D10 = styled(Dice)`
     & * {
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s .4s ease;
+    }
+
+    @media(max-height: 790px) {
+        top: ${props => props.selected ? '75px' : '150px'};
+        left: ${props => props.selected ? '75px' : '150px'};
     }
 `;
 
@@ -341,6 +374,11 @@ const D12 = styled(Dice)`
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s 0.5s ease;
     }
+
+    @media(max-height: 790px) {
+        top: ${props => props.selected ? '150px' : '150px'};
+        left: ${props => props.selected ? '25px' : '150px'};
+    }
 `;
 
 const D20 = styled(Dice)`
@@ -351,6 +389,11 @@ const D20 = styled(Dice)`
     & * {
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s .3s ease;
+    }
+
+    @media(max-height: 790px) {
+        top: ${props => props.selected ? '25px' : '150px'};
+        right: ${props => props.selected ? '150px' : '150px'};
     }
 `;
 
@@ -363,16 +406,26 @@ const D100 = styled(Dice)`
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s 0.6s ease;
     }
+
+    @media(max-height: 790px) {
+        bottom: ${props => props.selected ? '75px' : '150px'};
+        left: ${props => props.selected ? '75px' : '150px'};
+    }
 `;
 
 const More = styled(Dice)`
     bottom: ${props => props.selected ? '0' : '150px'};
-    left: ${props => props.selected ? '150px' : '150px'};
+    left: 150px;
     transition: all 0.8s 0.6s ease;
 
     & * {
         color: ${props => props.selected ? '#fff' : 'transparent'};
         transition: all 0.8s 0.6s ease;
+    }
+
+    @media(max-height: 790px) {
+        bottom: ${props => props.selected ? '25px' : '150px'};
+        right: 150px;
     }
 `;
 
