@@ -94,6 +94,7 @@ const Nav = styled.nav`
 
         @media(max-width: 420px) {
             width: 20%;
+            justify-content: center;
         }
     }
 `;
