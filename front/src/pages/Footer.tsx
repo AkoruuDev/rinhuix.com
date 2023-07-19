@@ -91,6 +91,16 @@ const Infos = styled.div`
             align-items: center;
             justify-content: center;
         }
+
+        & :nth-child(1) > :nth-child(1),
+        & :nth-child(1) > :nth-child(2),
+        & :nth-child(2) > :nth-child(1),
+        & :nth-child(2) > :nth-child(2),
+        & :nth-child(3) > :nth-child(2),
+        & :nth-child(3) > :nth-child(3),
+        & :nth-child(3) > :nth-child(4) {
+            display: none;
+        }
     }
 `
 
