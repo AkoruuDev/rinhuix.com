@@ -12,6 +12,8 @@ const Container = styled.div`
     justify-content: center;
 
     position: absolute;
+    overflow: hidden;
+    overflow-y: auto;
 
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Bruno Ace SC', cursive;
@@ -19,6 +21,17 @@ const Container = styled.div`
 
     p, span {
         font-family: 'Julius Sans One', sans-serif;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #000000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #926f0f;
+        border-radius: 20px;
+        border: none;
     }
 `;
 
