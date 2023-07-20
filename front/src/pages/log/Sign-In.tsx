@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { CommingSoon } from "../../services/CommingSoon";
-import { Button, Container, Form, Input, InputBox, LogoWhite, Space } from "../../styles";
+import { Button, Container, Form, Input, InputBox, Login, LogoWhite, OAuth, Space } from "../../styles";
 import { FcGoogle } from "react-icons/fc"
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -101,51 +101,28 @@ const Logo = styled.div`
     top: 80px;
     left: 80px;
     
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.5s ease;
     
     h1 {
         margin-left: 14px;
+    }
+
+    @media(max-width: 815px) {
+        left: calc(50vw - 100px);
+    }
+
+    @media(max-height: 740px) {
+        top: 40px;
     }
 `
 
 const Size = styled.div`
     width: 100px;
-`
-
-const Login = styled.section`
-    height: 100vh;
-    width: 450px;
-    position: absolute;
-    right: 80px;
-
-    background-color: #1f1f1f34;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h1{
-        margin-top: 100px;
-    }
-`
-
-const OAuth = styled.div`
-    width: 100%;
-    height: 50px;
-    border-radius: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f7f7f7;
-    color: #292929;
-    font-weight: 700;
-    cursor: pointer;
-    p {
-        margin-left: 15px;
-    }
 `
 
 export {
