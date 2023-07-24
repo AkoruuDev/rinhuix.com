@@ -9,10 +9,10 @@
 
 ### Look documentation here
 
-> <a href="./front/README.md">
+* <a href="./front/README.md">
     FRONTEND
 </a>
 
-> <a href="./back/README.md">
+* <a href="./back/README.md">
     BACKEND
 </a>
