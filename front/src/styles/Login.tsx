@@ -13,12 +13,6 @@ const Login = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 50px 0;
-    overflow: hidden;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 
     @media(max-width: 815px) {
         height: 80vh;
@@ -30,10 +24,6 @@ const Login = styled.section`
         & form {
             margin: 80px 0 20px 0;
         }
-    }
-
-    @media(max-height: 740px) {
-        height: 70vh;
     }
 
     @media(max-height: 540px) {
